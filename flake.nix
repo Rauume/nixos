@@ -16,7 +16,7 @@
     hardware.url = "github:nixos/nixos-hardware";
 
     # Global catppuccin theme
-    catppuccin.url = "github:catppuccin/nix";
+    # catppuccin.url = "github:catppuccin/nix";
 
     # NixOS Spicetify
     spicetify-nix = {
@@ -36,7 +36,7 @@
 
   outputs = {
     self,
-    catppuccin,
+    # catppuccin,
     # darwin,
     home-manager,
     nix-homebrew,
@@ -98,7 +98,7 @@
         };
         modules = [
           ./home/${username}/${hostname}.nix
-          catppuccin.homeManagerModules.catppuccin
+          # catppuccin.homeManagerModules.catppuccin
         ];
       };
   in {

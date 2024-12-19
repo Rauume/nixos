@@ -16,7 +16,7 @@
     ../modules/saml2aws.nix
     ../modules/scripts.nix
     #../modules/spicetify.nix
-    ../modules/tmux.nix
+    # ../modules/tmux.nix
     ../modules/zsh.nix
     ../modules/vscode.nix
   ];
@@ -33,8 +33,8 @@
   };
 
   # Catpuccin flavor and accent
-  catppuccin = {
-    flavor = "macchiato";
-    accent = "lavender";
-  };
+  # catppuccin = {
+  #   flavor = "macchiato";
+  #   accent = "lavender";
+  # };
 }

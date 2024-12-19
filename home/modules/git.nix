@@ -11,7 +11,7 @@
     # };
     delta = {
       enable = true;
-      catppuccin.enable = true;
+      # catppuccin.enable = true;
       options = {
         keep-plus-minus-markers = true;
         light = false;
