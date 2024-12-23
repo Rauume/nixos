@@ -14,7 +14,7 @@
       #gnome-connections
       #gnome-console
       #gnome-photos
-      #gnome-tour
+      gnome-tour
       #snapshot
     ])
     ++ (with pkgs; [

@@ -8,6 +8,7 @@
     ./hardware-configuration.nix
     ../modules/common.nix
     ../modules/gnome.nix
+    ../modules/piper.nix
 #    ../modules/laptop.nix
   ];
 

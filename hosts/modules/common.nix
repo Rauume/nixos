@@ -164,6 +164,7 @@
     easyeffects
     btop
     steam
+    mission-center
   ];
 
   # Docker configuration
