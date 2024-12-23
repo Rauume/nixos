@@ -153,7 +153,7 @@
     discord
     obsidian
     bottles
-    syncthing
+    # syncthing
     wgnord #nordVPN
     prusa-slicer
     mission-center
