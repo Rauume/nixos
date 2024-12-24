@@ -1,4 +1,6 @@
 # https://mynixos.com/home-manager/options/services.syncthing
+# https://nixos.wiki/wiki/Syncthing
+# https://wiki.nixos.org/wiki/Syncthing
 {
   # userConfig,
   # pkgs,

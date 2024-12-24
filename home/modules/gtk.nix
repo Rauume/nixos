@@ -23,10 +23,11 @@
       size = 11;
     };
     gtk3 = {
-      bookmarks = [
-        "file:///home/${userConfig.name}/Downloads/temp"
-        "file:///home/${userConfig.name}/Documents/repositories"
-      ];
+      # bookmarks will show in gnome files sidepanel.
+      # bookmarks = [
+      #   "file:///home/${userConfig.name}/Downloads/temp"
+      #   "file:///home/${userConfig.name}/Documents/repositories"
+      # ];
     };
   };
 }

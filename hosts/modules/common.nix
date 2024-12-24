@@ -155,6 +155,7 @@
     bottles
     # syncthing
     wgnord #nordVPN
+    wireguard-tools
     prusa-slicer
     mission-center
     scrcpy
