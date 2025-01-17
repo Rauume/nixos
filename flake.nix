@@ -106,6 +106,7 @@
       # energy = mkNixosConfiguration "energy" "nabokikh";
       # nabokikh-z13 = mkNixosConfiguration "nabokikh-z13" "nabokikh";
       nix-xps = mkNixosConfiguration "nix-xps" "cam";
+      nix-latitude = mkNixosConfiguration "nix-latitude" "cam";
     };
 
     # darwinConfigurations = {
@@ -117,6 +118,7 @@
       # "nabokikh@nabokikh-mac" = mkHomeConfiguration "aarch64-darwin" "nabokikh" "nabokikh-mac";
       # "nabokikh@nabokikh-z13" = mkHomeConfiguration "x86_64-linux" "nabokikh" "nabokikh-z13";
       "cam@nix-xps" = mkHomeConfiguration "x86_64-linux" "cam" "nix-xps";
+      "cam@nix-latitude" = mkHomeConfiguration "x86_64-linux" "cam" "nix-latitude";
     };
 
     overlays = import ./overlays {inherit inputs;};
