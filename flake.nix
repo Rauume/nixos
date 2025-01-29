@@ -23,6 +23,8 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    lan-mouse.url = "github:feschber/lan-mouse";
 
     # # Nix Darwin (for MacOS machines)
     # darwin = {
@@ -39,7 +41,7 @@
     # catppuccin,
     # darwin,
     home-manager,
-    nix-homebrew,
+    #nix-homebrew,
     nixpkgs,
     ...
   } @ inputs: let

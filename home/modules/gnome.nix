@@ -197,11 +197,11 @@ in
         "name" = "OCR";
       };
 
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
-        "binding" = "<Shift><Super>Return";
-        "command" = "alacritty";
-        "name" = "Alacritty";
-      };
+      # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
+      #   "binding" = "<Shift><Super>Return";
+      #   "command" = "alacritty";
+      #   "name" = "Alacritty";
+      # };
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
         "binding" = "<Shift><Super>b";

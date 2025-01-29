@@ -4,7 +4,7 @@
     ../modules/easyeffects.nix
     ../modules/gnome.nix
     ../modules/ulauncher.nix
-    #../modules/zoom.nix
+    ../modules/lan-mouse.nix
   ];
 
   # Enable home-manager
@@ -19,3 +19,4 @@
   # Disable warning for release checks
   home.enableNixpkgsReleaseCheck = false;
 }
+    

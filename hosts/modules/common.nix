@@ -91,7 +91,7 @@
   services.devmon.enable = true;
 
   # Enable PipeWire for sound
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -183,8 +183,8 @@
   #];
 
   # Additional services
-  services.locate.enable = true;
-  services.locate.localuser = null;
+  # services.locate.enable = true;
+  # services.locate.localuser = null;
 
   # OpenSSH daemon
   services.openssh.enable = true;
