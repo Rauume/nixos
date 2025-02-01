@@ -9,6 +9,7 @@
     ../modules/common.nix
     ../modules/gnome.nix
     ../modules/piper.nix
+    ./nvidia.nix
 #    ../modules/laptop.nix
   ];
 
