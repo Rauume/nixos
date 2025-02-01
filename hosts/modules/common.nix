@@ -150,6 +150,7 @@
     #zoom-us
     vscode
     firefox
+    google-chrome
     discord
     obsidian
     bottles
