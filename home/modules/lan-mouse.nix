@@ -10,14 +10,14 @@
     # systemd = false;
     # package = inputs.lan-mouse.packages.${pkgs.stdenv.hostPlatform.system}.default;
     # Optional configuration in nix syntax, see config.toml for available options
-    settings = {
-      port = 4242;
+    # settings = {
+    #   port = 4242;
       
-      [left]
-      hostname = "MMG CAM";
-      ips = ["192.168.1.128"];
-      port = 4242;
+    #   [left]
+    #   hostname = "MMG CAM";
+    #   ips = ["192.168.1.128"];
+    #   port = 4242;
       
-    };
+    # };
   };
 }
