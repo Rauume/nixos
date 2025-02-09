@@ -10,6 +10,7 @@
     ../modules/gnome.nix
     ../modules/piper.nix
     ./nvidia.nix
+    ../modules/steam.nix
 #    ../modules/laptop.nix
   ];
 

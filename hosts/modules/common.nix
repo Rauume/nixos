@@ -165,7 +165,7 @@
     # angryipscanner #Broken :(
     easyeffects
     btop
-    steam
+    # steam
     mission-center
   ];
 

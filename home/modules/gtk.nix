@@ -10,10 +10,10 @@
     #   enable = true;
     #   gnomeShellTheme = true;
     # };
-    iconTheme = {
-      name = "Tela-circle-dark";
-      package = pkgs.tela-circle-icon-theme;
-    };
+    # iconTheme = {
+      # name = "Tela-circle-dark";
+      # package = pkgs.tela-circle-icon-theme;
+    # };
     cursorTheme = {
       name = "Yaru";
       package = pkgs.yaru-theme;
