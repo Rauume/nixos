@@ -19,7 +19,6 @@
     # ../modules/tmux.nix
     ../modules/zsh.nix
     ../modules/vscode.nix
-    ../modules/syncthing.nix
   ];
 
   # Nixpkgs configuration

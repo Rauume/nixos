@@ -11,6 +11,7 @@
     ../modules/piper.nix
     ./nvidia.nix
     ../modules/steam.nix
+    ../modules/syncthing.nix
 #    ../modules/laptop.nix
   ];
 
@@ -22,4 +23,7 @@
   # on your system were taken. It‘s perfectly fine and recommended to leave
   # this value at the release version of the first install of this system.
   system.stateVersion = "24.05";
+
+  systemd.tpm2.enable = false;
+  boot.initrd.systemd.tpm2.enable = false;
 }
