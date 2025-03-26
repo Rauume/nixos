@@ -238,6 +238,7 @@ in
         "sleep-inactive-battery-type" = "nothing";
       };
 
+
       "org/gnome/shell" = {
         "disable-user-extensions" = false;
         "enabled-extensions" = [
@@ -253,14 +254,19 @@ in
           #"unblank@sun.wxg@gmail.com"
           #"user-theme@gnome-shell-extensions.gcampax.github.com"
           "runcat@kolesnikov.se"
+          "emoji-copy@felipeftn"
+          "BingWallpaper@ineffable-gmail.com"
+          "quicksettings-audio-devices-hider@marcinjahn.com"
         ];
-        # "favorite-apps" = [
-        #   "org.gnome.Nautilus.desktop"
-        #   "brave-browser.desktop"
-        #   "Alacritty.desktop"
-        #   "org.telegram.desktop.desktop"
-        #   "spotify.desktop"
-        # ];
+        "favorite-apps" = [
+          "org.gnome.Console.desktop"
+          "firefox.desktop"
+          "org.gnome.Nautilus.desktop"
+          "io.missioncenter.MissionCenter.desktop"
+          "discord.desktop"
+          "steam.desktop"
+          "obsidian.desktop"
+        ];
       };
 
       # "org/gnome/shell/extensions/auto-move-windows" = {
@@ -275,6 +281,10 @@ in
       #   ];
       # };
 
+      "org/gnome/shell/extensions/bingwallpaper" = {
+        "icon-name" = "low-frame-symbolic";
+      };
+      
       "org/gnome/shell/extensions/blur-my-shell" = {
         "settings-version" = 2;
       };
@@ -300,8 +310,13 @@ in
       };
 
       "org/gnome/shell/extensions/runcat" = {
-        "display-items" = "character-and-percentage";
+        "displaying-items" = "character-and-percentage";
         "idle-threshold" = 10;
+      };
+
+      "org/gnome/shell/extensions/emoji-copy" = {
+        "emoji-keybind" = ["<super>period"];
+        "always-show" = false;
       };
 
 

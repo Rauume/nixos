@@ -153,8 +153,7 @@
     google-chrome
     discord
     obsidian
-    bottles
-    # syncthing
+    # bottles
     wgnord #nordVPN
     wireguard-tools
     prusa-slicer
@@ -167,6 +166,13 @@
     btop
     # steam
     mission-center
+    wget
+    openvpn
+    gnome-boxes
+    libvirt
+    wineWowPackages.stagingFull
+    winetricks
+    lutris
   ];
 
   # Docker configuration

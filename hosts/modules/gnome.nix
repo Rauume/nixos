@@ -59,5 +59,8 @@
     gnomeExtensions.unblank
     gnomeExtensions.user-themes
     gnomeExtensions.runcat
+    gnomeExtensions.emoji-copy
+    # gnomeExtensions.BingWallpaper
+    gnomeExtensions.quick-settings-audio-devices-hider
   ];
 }
