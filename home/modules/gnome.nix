@@ -5,7 +5,7 @@ in
     imports = [
       # ./flameshot.nix
       ./gtk.nix
-      ./ocr-x11.nix
+      # ./ocr-x11.nix
       ./pop-shell.nix
     ];
 

@@ -29,7 +29,7 @@
       #gnome-clocks
       gnome-contacts
       #gnome-disk-utility
-      gnome-font-viewer
+      # gnome-font-viewer
       gnome-logs
       gnome-maps
       gnome-music
