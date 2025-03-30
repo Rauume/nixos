@@ -173,6 +173,9 @@
     wineWowPackages.stagingFull
     winetricks
     lutris
+    libreoffice-still
+    hunspell
+    hunspellDicts.en_AU-large
   ];
 
   # Docker configuration

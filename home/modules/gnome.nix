@@ -321,7 +321,7 @@ in
 
 
       "org/gnome/shell/extensions/clipboard-history" = {
-        "display-mode" = 3;
+        "display-mode" = 0;
         "next-entry" = ["<Shift><Alt>j"];
         "prev-entry" = ["<Shift><Alt>k"];
         "toggle-menu" = ["<Shift><Alt>v"];
