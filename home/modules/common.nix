@@ -18,6 +18,7 @@
     #../modules/spicetify.nix
     # ../modules/tmux.nix
     ../modules/zsh.nix
+    ../modules/ohmyzsh.nix
     ../modules/vscode.nix
   ];
 

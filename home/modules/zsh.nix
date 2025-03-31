@@ -1,8 +1,43 @@
-{...}: {
+{config, pkgs, ...}: {
   # Zsh shell configuration
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
+    # enableCompletion = true;
+    plugins = [
+      {
+        name = pkgs.zsh-fzf-tab.pname;
+        src = pkgs.zsh-fzf-tab.src;
+      }
+      {
+        name = "powerlevel10k-config";
+        src = ./../../files/configs/zsh;
+        file = "p10k.zsh";
+      }
+      {
+        name = "zsh-powerlevel10k";
+        src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+      {
+        name = pkgs.zsh-syntax-highlighting.pname;
+        src = pkgs.zsh-syntax-highlighting.src;
+      }
+      {
+        name = pkgs.zsh-autosuggestions.pname;
+        src = pkgs.zsh-autosuggestions.src;
+      }
+      {
+        name = pkgs.zsh-fzf-history-search.pname;
+        src = pkgs.zsh-fzf-history-search.src;
+      }
+    ];
+    oh-my-zsh = {
+      enable = true;
+      plugins = [
+      "git"
+      "sudo" 
+      ];
+    };
     shellAliases = {
       ff = "fastfetch";
 
@@ -13,34 +48,6 @@
       gco = "git checkout";
       ggl = "git pull";
       ggp = "git push";
-
-      # kubectl
-      # k = "kubectl";
-      # kgno = "kubectl get node";
-      # kdno = "kubectl describe node";
-      # kgp = "kubectl get pods";
-      # kep = "kubectl edit pods";
-      # kdp = "kubectl describe pods";
-      # kdelp = "kubectl delete pods";
-      # kgs = "kubectl get svc";
-      # kes = "kubectl edit svc";
-      # kds = "kubectl describe svc";
-      # kdels = "kubectl delete svc";
-      # kgi = "kubectl get ingress";
-      # kei = "kubectl edit ingress";
-      # kdi = "kubectl describe ingress";
-      # kdeli = "kubectl delete ingress";
-      # kgns = "kubectl get namespaces";
-      # kens = "kubectl edit namespace";
-      # kdns = "kubectl describe namespace";
-      # kdelns = "kubectl delete namespace";
-      # kgd = "kubectl get deployment";
-      # ked = "kubectl edit deployment";
-      # kdd = "kubectl describe deployment";
-      # kdeld = "kubectl delete deployment";
-      # kgsec = "kubectl get secret";
-      # kdsec = "kubectl describe secret";
-      # kdelsec = "kubectl delete secret";
 
       ld = "lazydocker";
       lg = "lazygit";
@@ -81,52 +88,52 @@
     '';
   };
 
-  programs.starship = {
-    enable = true;
-    # catppuccin.enable = true;
-    enableZshIntegration = true;
-    settings = {
-      add_newline = false;
-      directory = {
-        style = "bold lavender";
-      };
-      aws = {
-        disabled = true;
-      };
-      docker_context = {
-        symbol = " ";
-      };
-      golang = {
-        symbol = " ";
-      };
-      kubernetes = {
-        disabled = false;
-        style = "bold pink";
-        symbol = "󱃾 ";
-        format = "[$symbol$context( \($namespace\))]($style)";
-        contexts = [
-          {
-            context_pattern = "arn:aws:eks:(?P<var_region>.*):(?P<var_account>[0-9]{12}):cluster/(?P<var_cluster>.*)";
-            context_alias = "$var_cluster";
-          }
-        ];
-      };
-      lua = {
-        symbol = " ";
-      };
-      package = {
-        symbol = " ";
-      };
-      php = {
-        symbol = " ";
-      };
-      python = {
-        symbol = " ";
-      };
-      terraform = {
-        symbol = " ";
-      };
-      right_format = "$kubernetes";
-    };
-  };
+  # programs.starship = {
+  #   enable = true;
+  #   # catppuccin.enable = true;
+  #   enableZshIntegration = true;
+  #   settings = {
+  #     add_newline = false;
+  #     directory = {
+  #       style = "bold lavender";
+  #     };
+  #     aws = {
+  #       disabled = true;
+  #     };
+  #     docker_context = {
+  #       symbol = " ";
+  #     };
+  #     golang = {
+  #       symbol = " ";
+  #     };
+  #     kubernetes = {
+  #       disabled = false;
+  #       style = "bold pink";
+  #       symbol = "󱃾 ";
+  #       format = "[$symbol$context( \($namespace\))]($style)";
+  #       contexts = [
+  #         {
+  #           context_pattern = "arn:aws:eks:(?P<var_region>.*):(?P<var_account>[0-9]{12}):cluster/(?P<var_cluster>.*)";
+  #           context_alias = "$var_cluster";
+  #         }
+  #       ];
+  #     };
+  #     lua = {
+  #       symbol = " ";
+  #     };
+  #     package = {
+  #       symbol = " ";
+  #     };
+  #     php = {
+  #       symbol = " ";
+  #     };
+  #     python = {
+  #       symbol = " ";
+  #     };
+  #     terraform = {
+  #       symbol = " ";
+  #     };
+  #     right_format = "$kubernetes";
+  #   };
+  # };
 }

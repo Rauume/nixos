@@ -187,10 +187,20 @@
   programs.zsh.enable = true;
 
   # Fonts configuration
-  #fonts.packages = with pkgs; [
-  #  (nerdfonts.override {fonts = ["Meslo" "JetBrainsMono"];})
-  #  roboto
-  #];
+  fonts.packages = with pkgs; [
+    # (nerdfonts.override {fonts = ["Meslo" "JetBrainsMono" "MPlus"];})
+    # nerd-fonts.Meslo
+    nerd-fonts.meslo-lg
+    # nerd-fonts.JetBrainsMono
+    nerd-fonts.jetbrains-mono
+    # nerd-fonts.MPlus
+    nerd-fonts.mplus
+    # noto-fonts-emoji
+    noto-fonts-emoji-blob-bin
+    emojione
+    #mplus-outline-fonts.githubRelease
+    roboto
+  ];
 
   # Additional services
   # services.locate.enable = true;
