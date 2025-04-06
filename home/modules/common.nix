@@ -12,7 +12,7 @@
     ../modules/home.nix
     ../modules/krew.nix
     ../modules/lazygit.nix
-    ../modules/neovim.nix
+    # ../modules/neovim.nix
     ../modules/saml2aws.nix
     ../modules/scripts.nix
     #../modules/spicetify.nix

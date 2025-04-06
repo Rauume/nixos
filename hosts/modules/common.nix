@@ -7,6 +7,10 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ../modules/flatpak.nix
+  ];
+  
   # Nixpkgs configuration
   nixpkgs = {
     overlays = [
@@ -38,7 +42,7 @@
 
   # Boot settings
   boot = {
-    # kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
     consoleLogLevel = 0;
     initrd.verbose = true;
     kernelParams = ["quiet" "splash"];
@@ -176,12 +180,16 @@
     libreoffice-still
     hunspell
     hunspellDicts.en_AU-large
+    moonlight-qt
+    easyeffects
+    vulkan-tools
+    nvme-cli
   ];
 
   # Docker configuration
-  virtualisation.docker.enable = true;
-  virtualisation.docker.rootless.enable = true;
-  virtualisation.docker.rootless.setSocketVariable = true;
+  # virtualisation.docker.enable = true;
+  # virtualisation.docker.rootless.enable = true;
+  # virtualisation.docker.rootless.setSocketVariable = true;
 
   # Zsh configuration
   programs.zsh.enable = true;
@@ -208,10 +216,4 @@
 
   # OpenSSH daemon
   services.openssh.enable = true;
-
-  #Flatpaks
-  services.flatpak.enable = true;
-  # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-  # xdg.portal.config.common.default = "gtk";
-
 }

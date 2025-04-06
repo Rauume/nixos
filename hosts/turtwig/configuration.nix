@@ -11,6 +11,7 @@
     ../modules/piper.nix
     ../modules/steam.nix
     ../modules/syncthing.nix
+    ../modules/amdgpu.nix
 #    ../modules/laptop.nix
   ];
 
