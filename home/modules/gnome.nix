@@ -336,6 +336,10 @@ in
         "prev-entry" = ["<Shift><Alt>k"];
         "toggle-menu" = ["<Shift><Alt>v"];
       };
+      
+      "org/gnome/shell/extensions/user-theme" = {
+        "name" = "everforest-dark-shell";
+      };
 
       "org/gnome/shell/extensions/dash-to-dock" = {
         "animate-show-apps" = false;
