@@ -62,5 +62,6 @@
     gnomeExtensions.emoji-copy
     # gnomeExtensions.BingWallpaper
     gnomeExtensions.quick-settings-audio-devices-hider
+    gnomeExtensions.wallpaper-slideshow
   ];
 }

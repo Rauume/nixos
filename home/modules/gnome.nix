@@ -25,20 +25,20 @@ in
         "window-maximized" = false;
       };
 
-      # "org/gnome/desktop/interface" = {
+      "org/gnome/desktop/interface" = {
       #   "cursor-theme" = "Yaru";
       #   "font-name" = "Roboto 11";
       #   "icon-theme" = "Tela-circle-dark";
       #   "color-scheme" = "prefer-dark";
       #   "document-font-name" = "Roboto 11";
       #   "enable-animations" = false;
-      #   "enable-hot-corners" = false;
+        "enable-hot-corners" = false;
       #   "font-antialiasing" = "grayscale";
       #   "font-hinting" = "slight";
       #   "monospace-font-name" = "MesloLGS Nerd Font Mono 13";
       #   "show-battery-percentage" = true;
       #   "toolkit-accessibility" = false;
-      # };
+      };
 
       "org/gnome/tweaks" = {
         "show-extensions-notice" = false;
@@ -252,11 +252,12 @@ in
           #"rounded-window-corners@fxgn"
           #"space-bar@luchrioh"
           #"unblank@sun.wxg@gmail.com"
-          #"user-theme@gnome-shell-extensions.gcampax.github.com"
+          "user-theme@gnome-shell-extensions.gcampax.github.com"
           "runcat@kolesnikov.se"
           "emoji-copy@felipeftn"
-          "BingWallpaper@ineffable-gmail.com"
+          # "BingWallpaper@ineffable-gmail.com"
           "quicksettings-audio-devices-hider@marcinjahn.com"
+          "gnomeExtensions.wallpaper-slideshow"
         ];
         "favorite-apps" = [
           "org.gnome.Console.desktop"
@@ -281,8 +282,17 @@ in
       #   ];
       # };
 
-      "org/gnome/shell/extensions/bingwallpaper" = {
-        "icon-name" = "low-frame-symbolic";
+      # "org/gnome/shell/extensions/bingwallpaper" = {
+      #   "icon-name" = "low-frame-symbolic";
+      # };
+      
+      "org/gnome/shell/extensions/azwallpaper" = {
+        "slideshow-show-quick-settings-entry" = false;
+        "slideshow-use-absolute-time-for-duration" = true;
+        "slideshow-directory" = "/home/cam/Pictures/Bing Wallpapers";
+        "bing-wallpaper-download" = true;
+        "bing-download-directory" = "/home/cam/Pictures/Bing Wallpapers";
+        "bing-wallpaper-download-count" = 8;
       };
       
       "org/gnome/shell/extensions/blur-my-shell" = {
