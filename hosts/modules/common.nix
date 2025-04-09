@@ -184,6 +184,7 @@
     easyeffects
     vulkan-tools
     nvme-cli
+    mangohud
   ];
 
   # Docker configuration
