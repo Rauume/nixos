@@ -134,43 +134,31 @@
   # System packages
   environment.systemPackages = with pkgs; [
     (python3.withPackages (ps: with ps; [pip virtualenv]))
-    # delta
-    # docker-compose
-    # gcc
     # wl-clipboard
-    eza
-    fd
-    glib
+    eza #Alternate ls
+    fd #Find
+    # glib
+    wget
+    btop
     # killall
     # lazydocker
     # mesa
-    # nh
-    #obs-studio
+    # nh #Yet another nix cli helper
     pipenv
     pulseaudio
-    # qt6.qtwayland
-    ripgrep
     unzip
-    #zoom-us
     vscode
     firefox
     google-chrome
     discord
     obsidian
-    # bottles
-    wgnord #nordVPN
     wireguard-tools
     prusa-slicer
-    mission-center
     scrcpy
     spotify
     vlc
     # angryipscanner #Broken :(
     easyeffects
-    btop
-    # steam
-    mission-center
-    wget
     openvpn
     gnome-boxes
     libvirt
@@ -181,7 +169,6 @@
     hunspell
     hunspellDicts.en_AU-large
     moonlight-qt
-    easyeffects
     vulkan-tools
     nvme-cli
     mangohud
@@ -189,27 +176,16 @@
     resources
   ];
 
-  # Docker configuration
-  # virtualisation.docker.enable = true;
-  # virtualisation.docker.rootless.enable = true;
-  # virtualisation.docker.rootless.setSocketVariable = true;
-
   # Zsh configuration
   programs.zsh.enable = true;
 
   # Fonts configuration
   fonts.packages = with pkgs; [
-    # (nerdfonts.override {fonts = ["Meslo" "JetBrainsMono" "MPlus"];})
-    # nerd-fonts.Meslo
     nerd-fonts.meslo-lg
-    # nerd-fonts.JetBrainsMono
     nerd-fonts.jetbrains-mono
-    # nerd-fonts.MPlus
     nerd-fonts.mplus
-    # noto-fonts-emoji
     noto-fonts-emoji-blob-bin
     emojione
-    #mplus-outline-fonts.githubRelease
     roboto
   ];
 

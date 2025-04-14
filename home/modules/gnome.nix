@@ -3,9 +3,7 @@
 in
   with lib.hm.gvariant; {
     imports = [
-      # ./flameshot.nix
       ./gtk.nix
-      # ./ocr-x11.nix
       ./pop-shell.nix
     ];
 
@@ -105,7 +103,7 @@ in
       };
 
       "org/gnome/desktop/session" = {
-        "idle-delay" = mkUint32 0;
+        "idle-delay" = mkUint32 900;
       };
 
       "org/gnome/desktop/wm/keybindings" = {
@@ -180,57 +178,15 @@ in
       };
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-        "binding" = "<Control>space";
-        "command" = "ulauncher-toggle";
-        "name" = "Ulauncher";
+        "binding" = "<Super>t";
+        "command" = "kgx";
+        "name" = "Gnome Console";
       };
 
       "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1" = {
-        "binding" = "<Shift><Super>s";
-        "command" = "flameshot gui";
-        "name" = "Flameshot";
-      };
-
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2" = {
-        "binding" = "<Shift><Alt>2";
-        "command" = "ocr";
-        "name" = "OCR";
-      };
-
-      # "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3" = {
-      #   "binding" = "<Shift><Super>Return";
-      #   "command" = "alacritty";
-      #   "name" = "Alacritty";
-      # };
-
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4" = {
-        "binding" = "<Shift><Super>b";
-        "command" = "brave";
-        "name" = "Brave";
-      };
-
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5" = {
-        "binding" = "<Shift><Super>f";
+        "binding" = "<Super>f";
         "command" = "nautilus";
         "name" = "Files";
-      };
-
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6" = {
-        "binding" = "<Alt><Ctrl>q";
-        "command" = "gnome-session-quit";
-        "name" = "Logout";
-      };
-
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7" = {
-        "binding" = "<Shift><Super>t";
-        "command" = "telegram-desktop";
-        "name" = "Telegram";
-      };
-
-      "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8" = {
-        "binding" = "<Alt><Ctrl>p";
-        "command" = "gnome-pomodoro --start-stop";
-        "name" = "Pomodoro";
       };
 
       "org/gnome/settings-daemon/plugins/power" = {
@@ -238,54 +194,30 @@ in
         "sleep-inactive-battery-type" = "nothing";
       };
 
-
       "org/gnome/shell" = {
         "disable-user-extensions" = false;
         "enabled-extensions" = [
-          #"auto-move-windows@gnome-shell-extensions.gcampax.github.com"
-          #"blur-my-shell@aunetx"
           "clipboard-history@alexsaveau.dev"
-          #"dash-to-dock@micxgx.gmail.com"
-          #"just-perfection-desktop@just-perfection"
-          # "pomodoro@arun.codito.in"
           "pop-shell@system76.com"
-          #"rounded-window-corners@fxgn"
-          #"space-bar@luchrioh"
-          #"unblank@sun.wxg@gmail.com"
           "user-theme@gnome-shell-extensions.gcampax.github.com"
           "runcat@kolesnikov.se"
           "emoji-copy@felipeftn"
-          # "BingWallpaper@ineffable-gmail.com"
           "quicksettings-audio-devices-hider@marcinjahn.com"
-          "gnomeExtensions.wallpaper-slideshow"
+          "azwallpaper@azwallpaper.gitlab.com" # Wallpaper Slideshow
+          "status-icons@gnome-shell-extensions.gcampax.github.com"
+          "system-monitor@gnome-shell-extensions.gcampax.github.com"          
         ];
         "favorite-apps" = [
           "org.gnome.Console.desktop"
           "firefox.desktop"
           "org.gnome.Nautilus.desktop"
-          "io.missioncenter.MissionCenter.desktop"
+          "net.nokyan.Resources.desktop"
           "discord.desktop"
           "steam.desktop"
           "obsidian.desktop"
         ];
       };
 
-      # "org/gnome/shell/extensions/auto-move-windows" = {
-      #   "application-list" = [
-      #     "brave-browser.desktop:1"
-      #     "Alacritty.desktop:2"
-      #     "org.telegram.desktop.desktop:3"
-      #     "com.obsproject.Studio.desktop:4"
-      #     #"spotify.desktop:4"
-      #     "steam.desktop:4"
-      #     #"Zoom.desktop:5"
-      #   ];
-      # };
-
-      # "org/gnome/shell/extensions/bingwallpaper" = {
-      #   "icon-name" = "low-frame-symbolic";
-      # };
-      
       "org/gnome/shell/extensions/azwallpaper" = {
         "slideshow-show-quick-settings-entry" = false;
         "slideshow-use-absolute-time-for-duration" = true;
@@ -295,30 +227,6 @@ in
         "bing-wallpaper-download-count" = 8;
       };
       
-      "org/gnome/shell/extensions/blur-my-shell" = {
-        "settings-version" = 2;
-      };
-
-      "org/gnome/shell/extensions/blur-my-shell/dash-to-dock" = {
-        "pipeline" = "pipeline_default_rounded";
-      };
-
-      "org/gnome/shell/extensions/blur-my-shell/lockscreen" = {
-        "pipeline" = "pipeline_default";
-      };
-
-      "org/gnome/shell/extensions/blur-my-shell/overview" = {
-        "pipeline" = "pipeline_default";
-      };
-
-      "org/gnome/shell/extensions/blur-my-shell/panel" = {
-        "pipeline" = "pipeline_default";
-      };
-
-      "org/gnome/shell/extensions/blur-my-shell/screenshot" = {
-        "pipeline" = "pipeline_default";
-      };
-
       "org/gnome/shell/extensions/runcat" = {
         "displaying-items" = "character-and-percentage";
         "idle-threshold" = 10;
@@ -328,7 +236,6 @@ in
         "emoji-keybind" = ["<super>period"];
         "always-show" = false;
       };
-
 
       "org/gnome/shell/extensions/clipboard-history" = {
         "display-mode" = 0;
@@ -341,116 +248,11 @@ in
         "name" = "everforest-dark-shell";
       };
 
-      "org/gnome/shell/extensions/dash-to-dock" = {
-        "animate-show-apps" = false;
-        "apply-custom-theme" = false;
-        "autohide" = true;
-        "background-color" = "rgb(24,25,38)";
-        "background-opacity" = 0.8;
-        "custom-background-color" = true;
-        "custom-theme-shrink" = true;
-        "dash-max-icon-size" = 32;
-        "dock-fixed" = false;
-        "dock-position" = "BOTTOM";
-        "extend-height" = false;
-        "height-fraction" = 0.9;
-        "hot-keys" = false;
-        "intellihide" = false;
-        "intellihide-mode" = "FOCUS_APPLICATION_WINDOWS";
-        "preferred-monitor" = -2;
-        "preferred-monitor-by-connector" = "DisplayPort-0";
-        "preview-size-scale" = 0.0;
-        "show-show-apps-button" = false;
-        "show-trash" = false;
-        "transparency-mode" = "DYNAMIC";
-      };
-
       "org/gnome/shell/extensions/pop-shell" = {
         "active-hint" = false;
         "gap-inner" = mkUint32 1;
         "gap-outer" = mkUint32 1;
         "tile-by-default" = true;
-      };
-
-      "org/gnome/shell/extensions/just-perfection" = {
-        "accessibility-menu" = true;
-        "activities-button" = true;
-        "activities-button-icon-monochrome" = false;
-        "activities-button-label" = true;
-        "animation" = 0;
-        "app-menu" = false;
-        "app-menu-icon" = true;
-        "app-menu-label" = true;
-        "background-menu" = true;
-        "clock-menu" = true;
-        "controls-manager-spacing-size" = 0;
-        "dash" = true;
-        "dash-icon-size" = 0;
-        "dash-separator" = true;
-        "double-super-to-appgrid" = true;
-        "gesture" = true;
-        "hot-corner" = false;
-        "keyboard-layout" = true;
-        "notification-banner-position" = 2;
-        "osd" = false;
-        "panel" = true;
-        "panel-arrow" = true;
-        "panel-button-padding-size" = 4;
-        "panel-corner-size" = 0;
-        "panel-in-overview" = true;
-        "panel-indicator-padding-size" = 0;
-        "panel-notification-icon" = true;
-        "panel-size" = 0;
-        "power-icon" = true;
-        "quick-settings" = true;
-        "ripple-box" = true;
-        "screen-sharing-indicator" = true;
-        "search" = true;
-        "show-apps-button" = true;
-        "startup-status" = 0;
-        "theme" = false;
-        "window-demands-attention-focus" = false;
-        "window-menu-take-screenshot-button" = true;
-        "window-picker-icon" = true;
-        "window-preview-caption" = true;
-        "window-preview-close-button" = true;
-        "workspace" = false;
-        "workspace-background-corner-size" = 0;
-        "workspace-peek" = false;
-        "workspace-popup" = true;
-        "workspace-switcher-size" = 0;
-        "workspace-wrap-around" = false;
-        "workspaces-in-app-grid" = true;
-      };
-
-      "org/gnome/shell/extensions/rounded-window-corners-reborn" = {
-        "border-color" = mkTuple [0.71764707565307617 0.74117660522460938 0.97254902124404907 1.0];
-        "border-width" = 1;
-        global-rounded-corner-settings = [
-          (mkDictionaryEntry [
-            "padding"
-            (mkVariant [
-              (mkDictionaryEntry ["top" (mkVariant 1)])
-              (mkDictionaryEntry ["left" (mkVariant 1)])
-              (mkDictionaryEntry ["right" (mkVariant 1)])
-              (mkDictionaryEntry ["bottom" (mkVariant 1)])
-            ])
-          ])
-
-          (mkDictionaryEntry [
-            "keep_rounded_corners"
-            (mkVariant [
-              (mkDictionaryEntry ["maximized" (mkVariant true)])
-              (mkDictionaryEntry ["fullscreen" (mkVariant false)])
-            ])
-          ])
-
-          (mkDictionaryEntry ["border_radius" (mkVariant 8)])
-          (mkDictionaryEntry ["smoothing" (mkVariant 0)])
-          (mkDictionaryEntry ["enabled" (mkVariant true)])
-        ];
-        "skip-libadwaita-app" = false;
-        "skip-libhandy-app" = false;
       };
 
       "org/gnome/shell/extensions/space-bar/appearance" = {
@@ -497,7 +299,7 @@ in
       };
 
       "system/locale" = {
-        "region" = "en_IE.UTF-8";
+        "region" = "en_AU.UTF-8";
       };
     };
   }
