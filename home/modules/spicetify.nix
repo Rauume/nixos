@@ -12,8 +12,8 @@ in {
 
   programs.spicetify = {
     enable = true;
-    theme = spicePkgs.themes.catppuccin;
-    colorScheme = "macchiato";
+    theme = spicePkgs.themes.hazy;
+    # colorScheme = "mocha";
 
     enabledExtensions = with spicePkgs.extensions; [
       keyboardShortcut

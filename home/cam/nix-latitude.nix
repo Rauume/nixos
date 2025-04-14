@@ -3,8 +3,6 @@
     ../modules/common.nix
     ../modules/easyeffects.nix
     ../modules/gnome.nix
-    ../modules/ulauncher.nix
-    ../modules/lan-mouse.nix
   ];
 
   # Enable home-manager

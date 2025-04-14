@@ -5,13 +5,7 @@
       {
         "float": [
           {
-            "class": "ulauncher"
-          },
-          {
             "class": "gnome-calculator"
-          },
-          {
-            "class": "zoom"
           }
         ],
         "skiptaskbarhidden": [],

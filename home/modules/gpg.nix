@@ -27,10 +27,7 @@
   };
 
   services.gpg-agent = {
-    enable =
-      if pkgs.stdenv.isDarwin
-      then false
-      else true;
+    enable = true;
     defaultCacheTtl = 86400;
     enableSshSupport = true;
     pinentryPackage = pkgs.pinentry-gnome3;
