@@ -108,7 +108,7 @@
   # User configuration
   users.users.${userConfig.name} = {
     description = userConfig.fullName;
-    extraGroups = ["networkmanager" "wheel" "docker"];
+    extraGroups = ["dialout" "networkmanager" "wheel" "docker"];
     isNormalUser = true;
     shell = pkgs.zsh;
   };
@@ -185,6 +185,8 @@
     vulkan-tools
     nvme-cli
     mangohud
+    thonny #rp2040 micropython development
+    resources
   ];
 
   # Docker configuration
