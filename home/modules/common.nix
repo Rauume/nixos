@@ -9,8 +9,6 @@
     ../modules/lazygit.nix
     # ../modules/neovim.nix
     ../modules/scripts.nix
-    ../modules/spicetify.nix
-    # ../modules/tmux.nix
     ../modules/zsh.nix
     ../modules/ohmyzsh.nix
     ../modules/vscode.nix

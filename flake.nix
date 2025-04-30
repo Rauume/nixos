@@ -14,19 +14,11 @@
 
     # NixOS profiles to optimize settings for different hardware
     hardware.url = "github:nixos/nixos-hardware";
-
-    # NixOS Spicetify
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
   };
 
   outputs = {
     self,
     home-manager,
-    #nix-homebrew,
     nixpkgs,
     ...
   } @ inputs: let

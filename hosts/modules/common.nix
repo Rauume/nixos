@@ -153,7 +153,6 @@
     discord
     obsidian
     wireguard-tools
-    prusa-slicer
     scrcpy
     spotify
     vlc
@@ -174,6 +173,7 @@
     mangohud
     thonny #rp2040 micropython development
     resources
+    r2modman #modding for RiskOfRain2
   ];
 
   # Zsh configuration
@@ -183,7 +183,7 @@
   fonts.packages = with pkgs; [
     nerd-fonts.meslo-lg
     nerd-fonts.jetbrains-mono
-    nerd-fonts.mplus
+    # nerd-fonts.mplus
     noto-fonts-emoji-blob-bin
     emojione
     roboto
