@@ -11,7 +11,6 @@
     ../modules/scripts.nix
     ../modules/zsh.nix
     ../modules/ohmyzsh.nix
-    ../modules/vscode.nix
   ];
 
   # Nixpkgs configuration

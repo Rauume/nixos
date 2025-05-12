@@ -147,7 +147,7 @@
     pipenv
     pulseaudio
     unzip
-    vscode
+    vscode-fhs
     firefox
     google-chrome
     discord
@@ -174,6 +174,7 @@
     thonny #rp2040 micropython development
     resources
     r2modman #modding for RiskOfRain2
+    dotnetCorePackages.dotnet_9.sdk
   ];
 
   # Zsh configuration
