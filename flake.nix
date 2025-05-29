@@ -2,13 +2,11 @@
   description = "NixOS and nix-darwin configs for my machines";
   inputs = {
     # Nixpkgs
-    #nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     # Home manager
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -69,7 +67,5 @@
       "cam@nix-latitude" = mkHomeConfiguration "x86_64-linux" "cam" "nix-latitude";
       "cam@turtwig" = mkHomeConfiguration "x86_64-linux" "cam" "turtwig";
     };
-
-    overlays = import ./overlays {inherit inputs;};
   };
 }

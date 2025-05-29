@@ -45,7 +45,7 @@
     ]);
 
   # List of Gnome specific packages
-  environment.systemPackages = with pkgs.unstable; [
+  environment.systemPackages = with pkgs; [
     # gnome-pomodoro
     gnome-tweaks
     gnomeExtensions.auto-move-windows
