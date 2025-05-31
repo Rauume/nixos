@@ -63,5 +63,6 @@
     # gnomeExtensions.BingWallpaper
     gnomeExtensions.quick-settings-audio-devices-hider
     gnomeExtensions.wallpaper-slideshow
+    gnomeExtensions.caffeine
   ];
 }

@@ -199,13 +199,14 @@ in
         "enabled-extensions" = [
           "clipboard-history@alexsaveau.dev"
           "pop-shell@system76.com"
-          "user-theme@gnome-shell-extensions.gcampax.github.com"
+          # "user-theme@gnome-shell-extensions.gcampax.github.com"
           "runcat@kolesnikov.se"
           "emoji-copy@felipeftn"
           "quicksettings-audio-devices-hider@marcinjahn.com"
           "azwallpaper@azwallpaper.gitlab.com" # Wallpaper Slideshow
           "status-icons@gnome-shell-extensions.gcampax.github.com"
-          "system-monitor@gnome-shell-extensions.gcampax.github.com"          
+          "system-monitor@gnome-shell-extensions.gcampax.github.com"
+          "blur-my-shell@aunetx"
         ];
         "favorite-apps" = [
           "org.gnome.Console.desktop"
