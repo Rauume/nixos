@@ -134,6 +134,8 @@
     # wl-clipboard
     eza #Alternate ls
     fd #Find
+    xh #HTTP client
+    dust #Disk usage utility
     # glib
     wget
     btop
@@ -172,6 +174,7 @@
     resources
     r2modman #modding for RiskOfRain2
     dotnetCorePackages.dotnet_9.sdk
+    
   ];
 
   # Zsh configuration
