@@ -79,8 +79,9 @@
     xkb.layout = "pl";
     xkb.variant = "";
     excludePackages = with pkgs; [xterm];
-    displayManager.gdm.enable = true;
   };
+  
+  services.displayManager.gdm.enable = true;
 
   # PATH configuration
   environment.localBinInPath = true;

@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   # Enable GNOME
-  services.xserver.desktopManager.gnome.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   # Remove decorations for QT applications
   environment.sessionVariables = {
