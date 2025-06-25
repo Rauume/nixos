@@ -1,4 +1,4 @@
-{...}: {
+{lib, ...}: {
   imports = [
     ../modules/common.nix
     ../modules/easyeffects.nix
@@ -16,4 +16,9 @@
 
   # Disable warning for release checks
   home.enableNixpkgsReleaseCheck = false;
+  
+  #Turtwig specific gnome settings  
+  dconf.settings."org/gnome/shell".enabled-extensions = lib.mkAfter [
+    "tilingshell@ferrarodomenico.com"
+  ];
 }

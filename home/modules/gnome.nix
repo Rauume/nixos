@@ -207,9 +207,10 @@ in
           "status-icons@gnome-shell-extensions.gcampax.github.com"
           "system-monitor@gnome-shell-extensions.gcampax.github.com"
           "blur-my-shell@aunetx"
+          "caffeine@patapon.info"
         ];
         "favorite-apps" = [
-          "org.gnome.Console.desktop"
+          "com.mitchellh.ghostty.desktop"
           "firefox.desktop"
           "org.gnome.Nautilus.desktop"
           "net.nokyan.Resources.desktop"

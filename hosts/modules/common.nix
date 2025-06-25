@@ -45,6 +45,7 @@
     kernelParams = ["quiet" "splash"];
     loader.efi.canTouchEfiVariables = true;
     loader.systemd-boot.enable = true;
+    loader.systemd-boot.configurationLimit = 5;
     #0 to skip showing previous generations. Mash esc on boot to get generation selection screen.
     loader.timeout = 0;
     plymouth.enable = true;
@@ -167,7 +168,7 @@
     libreoffice-still
     hunspell
     hunspellDicts.en_AU-large
-    moonlight-qt
+    # moonlight-qt
     vulkan-tools
     nvme-cli
     mangohud

@@ -54,9 +54,9 @@
     gnomeExtensions.dash-to-dock
     gnomeExtensions.just-perfection
     gnomeExtensions.pop-shell
-    gnomeExtensions.rounded-window-corners-reborn
-    gnomeExtensions.space-bar
-    gnomeExtensions.unblank
+    # gnomeExtensions.rounded-window-corners-reborn
+    # gnomeExtensions.space-bar
+    # gnomeExtensions.unblank
     gnomeExtensions.user-themes
     gnomeExtensions.runcat
     gnomeExtensions.emoji-copy
