@@ -1,6 +1,7 @@
 {
   inputs,
   hostname,
+  pkgs,
   ...
 }: {
   imports = [
@@ -11,8 +12,6 @@
     ../modules/piper.nix
     ../modules/steam.nix
     ../modules/syncthing.nix
-    ./nvidia.nix
-#    ../modules/laptop.nix
   ];
 
   # Set hostname
@@ -24,9 +23,21 @@
   # this value at the release version of the first install of this system.
   system.stateVersion = "24.05";
   
-  boot.initrd.systemd.tpm2.enable = false;
+  systemd.tpm2.enable = false;
   
   boot.blacklistedKernelModules = [
     "snd_soc_avs"
   ];
+  
+  specialisation = {
+    cam.configuration = {
+      system.nixos.tags = [ "Nvidia-GPU" ];
+      imports = [
+        ./nvidia.nix
+      ];
+      environment.systemPackages = with pkgs; [
+        sl #Used as a profile sanity check
+      ];
+    };
+  };
 }

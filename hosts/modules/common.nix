@@ -42,7 +42,7 @@
     kernelPackages = pkgs.linuxPackages_lqx;
     consoleLogLevel = 0;
     initrd.verbose = true;
-    kernelParams = ["quiet" "splash"];
+    kernelParams = ["quiet" "splash" "mitigations=off"];
     loader.efi.canTouchEfiVariables = true;
     loader.systemd-boot.enable = true;
     loader.systemd-boot.configurationLimit = 5;
