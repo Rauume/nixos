@@ -1,5 +1,5 @@
+# Copyright (c) 2023 Alexander Nabokikh
 {
-  description = "NixOS and nix-darwin configs for my machines";
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -27,9 +27,8 @@
       cam = {
         name = "cam";
         fullName = "Cam Schriever";
-        avatar = ./files/avatar/face;
         email = "";
-        # gitKey = "";
+        avatar = ./files/avatar/icon.png; #512x512
       };
     };
 
@@ -56,12 +55,13 @@
         ];
       };
   in {
+    #System Config
     nixosConfigurations = {
       nix-xps = mkNixosConfiguration "nix-xps" "cam";
       nix-latitude = mkNixosConfiguration "nix-latitude" "cam";
       turtwig = mkNixosConfiguration "turtwig" "cam";
     };
-
+    #Home Manager Config
     homeConfigurations = {
       "cam@nix-xps" = mkHomeConfiguration "x86_64-linux" "cam" "nix-xps";
       "cam@nix-latitude" = mkHomeConfiguration "x86_64-linux" "cam" "nix-latitude";

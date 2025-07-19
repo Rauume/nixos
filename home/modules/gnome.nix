@@ -131,6 +131,7 @@ in
         "switch-to-workspace-8" = ["<Super>8"];
         "switch-to-workspace-9" = ["<Super>9"];
         "toggle-maximized" = ["<Super>m"];
+        "switch-windows" = ["<Alt>Tab"];
       };
 
       "org/gnome/desktop/wm/preferences" = {

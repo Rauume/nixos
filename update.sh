@@ -1,13 +1,17 @@
 #!/bin/bash
 # Check if an argument was passed
 if [ -z "$1" ]; then
-  echo "Usage: $0 \"your string here\""
+  echo "Usage: $0 \"machine-name\""
   exit 1
 fi
 
-# Output the provided string
 echo "Updating NixOS: $1"
 
+# Update package references/nix flake inputs
 nix flake update;
-sudo nixos-rebuild switch --upgrade --flake .#$1;
+
+# Build and switch to the new instance
+sudo nixos-rebuild switch --flake .#$1;
+
+# Update home-manager packages, from the flake
 home-manager switch --flake .#cam@$1;
