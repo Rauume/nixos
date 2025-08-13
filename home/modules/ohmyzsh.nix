@@ -8,4 +8,5 @@
     zsh-autosuggestions
     zsh-syntax-highlighting
   ];
+  programs.direnv.enableZshIntegration = true;
 }

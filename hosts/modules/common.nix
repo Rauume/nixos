@@ -107,7 +107,7 @@
   # User configuration
   users.users.${userConfig.name} = {
     description = userConfig.fullName;
-    extraGroups = ["dialout" "networkmanager" "wheel" "docker" "gamemode"];
+    extraGroups = ["dialout" "networkmanager" "wheel" "docker" "gamemode" "kvm"];
     isNormalUser = true;
     shell = pkgs.zsh;
   };
@@ -149,6 +149,9 @@
     pulseaudio
     unzip
     vscode-fhs
+    cmake
+    zstd
+    direnv
     firefox
     google-chrome
     discord
@@ -157,7 +160,6 @@
     scrcpy
     spotify
     vlc
-    # angryipscanner #Broken :(
     easyeffects
     openvpn
     gnome-boxes
@@ -176,7 +178,9 @@
     resources
     r2modman #modding for RiskOfRain2
     dotnetCorePackages.dotnet_9.sdk
-    
+    arduino-ide
+    picotool
+    nix-ld
   ];
 
   # Zsh configuration
@@ -198,4 +202,14 @@
 
   # OpenSSH daemon
   services.openssh.enable = true;
+  
+  # Arduino Programming
+  services.udev.extraRules = ''
+    # Arduino Uno R4
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="2341", MODE:="0666"
+  '';
+  
+  # automatic nix-develop when entering a relevant directory.
+  # Great for development, *without* needing to add everything to this repo.
+  programs.direnv.enable = true;
 }
