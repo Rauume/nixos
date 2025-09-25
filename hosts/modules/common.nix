@@ -102,6 +102,19 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
+    
+    # extraConfig.pipewire."pipewire.context.properties.default.clock.min-quantum = 1024;
+    extraConfig.pipewire = {
+      "pipewire" = {
+        "context.properties" = {
+          "default.clock.min-quantum" = 1024;
+        };
+      };
+    };
+    
+    #https://www.reddit.com/r/linux_gaming/comments/1gy347h/newbie_here_ive_tried_almost_all_fixes_theres/
+      
+    
   };
 
   # User configuration
@@ -149,7 +162,6 @@
     pulseaudio
     unzip
     vscode-fhs
-    cmake
     zstd
     direnv
     firefox
@@ -170,14 +182,12 @@
     libreoffice-still
     hunspell
     hunspellDicts.en_AU-large
-    # moonlight-qt
     vulkan-tools
     nvme-cli
     mangohud
     thonny #rp2040 micropython development
     resources
     r2modman #modding for RiskOfRain2
-    dotnetCorePackages.dotnet_9.sdk
     arduino-ide
     picotool
     nix-ld

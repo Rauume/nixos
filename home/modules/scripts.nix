@@ -1,3 +1,6 @@
+# Remember to commit any new scripts,
+# Else they won't be symlinked correctly.
+
 {
   pkgs,
   lib,
@@ -9,14 +12,7 @@ in {
   home.file = {
     ".local/bin" = {
       recursive = true;
-      source = "${scripts}";
+      source = scripts;
     };
   };
-
-  # Conditional configuration for Darwin systems
-  home.sessionPath = lib.mkMerge [
-    (lib.mkIf pkgs.stdenv.isDarwin [
-      "$HOME/.local/bin"
-    ])
-  ];
 }
