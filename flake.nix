@@ -60,12 +60,14 @@
       nix-xps = mkNixosConfiguration "nix-xps" "cam";
       nix-latitude = mkNixosConfiguration "nix-latitude" "cam";
       turtwig = mkNixosConfiguration "turtwig" "cam";
+      grotle = mkNixosConfiguration "grotle" "cam";
     };
     #Home Manager Config
     homeConfigurations = {
       "cam@nix-xps" = mkHomeConfiguration "x86_64-linux" "cam" "nix-xps";
       "cam@nix-latitude" = mkHomeConfiguration "x86_64-linux" "cam" "nix-latitude";
       "cam@turtwig" = mkHomeConfiguration "x86_64-linux" "cam" "turtwig";
+      "cam@grotle" = mkHomeConfiguration "x86_64-linux" "cam" "grotle";
     };
   };
 }

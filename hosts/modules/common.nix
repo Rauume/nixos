@@ -36,7 +36,7 @@
     experimental-features = "nix-command flakes";
     auto-optimise-store = true;
   };
-
+  
   # Boot settings
   boot = {
     kernelPackages = pkgs.linuxPackages_lqx;
@@ -103,18 +103,13 @@
     pulse.enable = true;
     jack.enable = true;
     
-    # extraConfig.pipewire."pipewire.context.properties.default.clock.min-quantum = 1024;
     extraConfig.pipewire = {
       "pipewire" = {
         "context.properties" = {
           "default.clock.min-quantum" = 1024;
         };
       };
-    };
-    
-    #https://www.reddit.com/r/linux_gaming/comments/1gy347h/newbie_here_ive_tried_almost_all_fixes_theres/
-      
-    
+    };   
   };
 
   # User configuration
@@ -206,9 +201,8 @@
     roboto
   ];
 
-  # Additional services
-  # services.locate.enable = true;
-  # services.locate.localuser = null;
+  
+  services.fwupd.enable = true;
 
   # OpenSSH daemon
   services.openssh.enable = true;
