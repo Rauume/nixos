@@ -113,7 +113,10 @@ This guide assumes you've already [installed the graphical iso](https://nixos.or
 
 5. **Complete Setup:**
 	```
-	# Temporarily install home-manager. This will persist once install is done.
+	# Stage your new files in Git. Otherwise, nix-shell won't build them.
+	git add .
+	
+	# Temporarily install home-manager. This will persist once install is complete.
 	nix-shell -p home-manager
 	
 	# Update the flake, and enable flakes
