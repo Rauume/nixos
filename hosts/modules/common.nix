@@ -115,7 +115,7 @@
   # User configuration
   users.users.${userConfig.name} = {
     description = userConfig.fullName;
-    extraGroups = ["dialout" "networkmanager" "wheel" "docker" "gamemode" "kvm"];
+    extraGroups = ["dialout" "networkmanager" "wheel" "docker" "gamemode" "kvm" "render" "video"];
     isNormalUser = true;
     shell = pkgs.zsh;
   };

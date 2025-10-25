@@ -12,6 +12,7 @@
     ../modules/steam.nix
     #../modules/syncthing.nix
     ../modules/amdgpu.nix
+    # ../modules/ollama.nix
   ];
 
   # Set hostname
