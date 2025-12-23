@@ -12,12 +12,7 @@
   ];
   
   # Nixpkgs configuration
-  nixpkgs = {
-
-    config = {
-      allowUnfree = true;
-    };
-  };
+  nixpkgs.config.allowUnfree = true;
 
   # Register flake inputs for nix commands
   nix.registry = lib.mapAttrs (_: flake: {inherit flake;}) (lib.filterAttrs (_: lib.isType "flake") inputs);
@@ -173,7 +168,7 @@
     libvirt
     wineWowPackages.stagingFull
     winetricks
-    lutris
+    # lutris
     libreoffice-still
     hunspell
     hunspellDicts.en_AU-large
@@ -186,6 +181,13 @@
     arduino-ide
     picotool
     nix-ld
+    furmark
+    gnome-firmware
+    appimage-run
+    # docker
+    docker-compose
+    # freerdp
+    blender
   ];
 
   # Zsh configuration
@@ -197,7 +199,7 @@
     nerd-fonts.jetbrains-mono
     # nerd-fonts.mplus
     noto-fonts-emoji-blob-bin
-    emojione
+    # emojione
     roboto
   ];
 
@@ -216,4 +218,9 @@
   # automatic nix-develop when entering a relevant directory.
   # Great for development, *without* needing to add everything to this repo.
   programs.direnv.enable = true;
+  
+  # Docker
+  virtualisation.docker = {
+    enable = true;
+  };
 }

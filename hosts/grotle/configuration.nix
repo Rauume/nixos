@@ -10,9 +10,10 @@
     ../modules/gnome.nix
     ../modules/piper.nix
     ../modules/steam.nix
-    #../modules/syncthing.nix
+    ../modules/syncthing.nix
     ../modules/amdgpu.nix
     # ../modules/ollama.nix
+    ../modules/openrgb.nix
   ];
 
   # Set hostname
@@ -26,4 +27,6 @@
 
   systemd.tpm2.enable = false;
   boot.initrd.systemd.tpm2.enable = false;
+
+
 }
