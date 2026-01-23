@@ -77,7 +77,7 @@
     excludePackages = with pkgs; [xterm];
   };
   
-  services.displayManager.gdm.enable = true;
+  # services.displayManager.gdm.enable = true;
 
   # PATH configuration
   environment.localBinInPath = true;
@@ -188,6 +188,8 @@
     docker-compose
     # freerdp
     blender
+    rustdesk-flutter
+    prusa-slicer
   ];
 
   # Zsh configuration

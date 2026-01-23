@@ -2,7 +2,6 @@
   imports = [
     ../modules/common.nix
     ../modules/easyeffects.nix
-    ../modules/gnome.nix
   ];
 
   # Enable home-manager

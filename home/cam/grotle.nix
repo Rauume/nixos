@@ -2,7 +2,6 @@
   imports = [
     ../modules/common.nix
     ../modules/easyeffects.nix
-    ../modules/gnome.nix
   ];
 
   # Enable home-manager
@@ -16,8 +15,4 @@
 
   # Disable warning for release checks
   # home.enableNixpkgsReleaseCheck = false;
-  
-  dconf.settings."org/gnome/shell".enabled-extensions = lib.mkAfter [
-    "tilingshell@ferrarodomenico.com"
-  ];
 }

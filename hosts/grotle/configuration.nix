@@ -7,12 +7,13 @@
     
     ./hardware-configuration.nix
     ../modules/common.nix
-    ../modules/gnome.nix
+    ../modules/kde.nix
     ../modules/piper.nix
     ../modules/steam.nix
     ../modules/syncthing.nix
     ../modules/amdgpu.nix
     # ../modules/ollama.nix
+    # ../modules/winboat.nix
     ../modules/openrgb.nix
   ];
 

@@ -1,8 +1,8 @@
 {pkgs, ...}: {
   xdg.portal = {
     enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gnome];
-    configPackages = [pkgs.gnome-session];
+    extraPortals = [pkgs.kdePackages.xdg-desktop-portal-kde];
+    configPackages = [pkgs.kdePackages.plasma-workspace];
   };
   services = {
     flatpak.enable = true; # Enable Flatpak
