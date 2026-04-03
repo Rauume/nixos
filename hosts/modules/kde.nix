@@ -22,18 +22,15 @@ environment.systemPackages = with pkgs;
     kdePackages.isoimagewriter # Optional: Program to write hybrid ISO files onto USB disks
     kdePackages.partitionmanager # Optional: Manage the disk devices, partitions and file systems on your computer
     # Non-KDE graphical packages
-    hardinfo2 # System information and benchmarks for Linux systems
-    wayland-utils # Wayland utilities
-    wl-clipboard # Command-line copy/paste utilities for Wayland
-    
     kdePackages.yakuake
+
+
   ];
-  
+
   hardware = {
     bluetooth = {
         enable = true;
-        # // Needed this to properly display battery 
-        # // percentage for my cheap bluetooth earbuds
+        # // To display battery percentage of bluetooth devices
         settings.General.Experimental = true;
     };
   };

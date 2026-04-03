@@ -10,7 +10,7 @@
   imports = [
     ../modules/flatpak.nix
   ];
-  
+
   # Nixpkgs configuration
   nixpkgs.config.allowUnfree = true;
 
@@ -31,10 +31,10 @@
     experimental-features = "nix-command flakes";
     auto-optimise-store = true;
   };
-  
+
   # Boot settings
   boot = {
-    kernelPackages = pkgs.linuxPackages_lqx;
+    kernelPackages = pkgs.linuxPackages_zen;
     consoleLogLevel = 0;
     initrd.verbose = true;
     kernelParams = ["quiet" "splash" "mitigations=off"];
@@ -76,7 +76,7 @@
     xkb.variant = "";
     excludePackages = with pkgs; [xterm];
   };
-  
+
   # services.displayManager.gdm.enable = true;
 
   # PATH configuration
@@ -97,14 +97,14 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
-    
+
     extraConfig.pipewire = {
       "pipewire" = {
         "context.properties" = {
           "default.clock.min-quantum" = 1024;
         };
       };
-    };   
+    };
   };
 
   # User configuration
@@ -136,12 +136,10 @@
   # System packages
   environment.systemPackages = with pkgs; [
     (python3.withPackages (ps: with ps; [pip virtualenv]))
-    # wl-clipboard
     eza #Alternate ls
     fd #Find
     xh #HTTP client
     dust #Disk usage utility
-    # glib
     wget
     btop
     # killall
@@ -151,7 +149,6 @@
     pipenv
     pulseaudio
     unzip
-    vscode-fhs
     zstd
     direnv
     firefox
@@ -162,33 +159,44 @@
     scrcpy
     spotify
     vlc
+    libvirt
+    nix-ld
+
+    # Util
     easyeffects
     openvpn
-    gnome-boxes
-    libvirt
-    wineWowPackages.stagingFull
-    winetricks
-    # lutris
+    neovim
+    tldr
+    appimage-run
+    rustdesk-flutter
+    wayland-utils # Wayland utilities
+    wl-clipboard # Command-line copy/paste utilities for Wayland
+
+    # Office
     libreoffice-still
     hunspell
     hunspellDicts.en_AU-large
+
+    # Graphics
     vulkan-tools
-    nvme-cli
+    furmark
     mangohud
+
+    # Development
+    vscode-fhs
+    docker-compose
     thonny #rp2040 micropython development
-    resources
-    r2modman #modding for RiskOfRain2
     arduino-ide
     picotool
-    nix-ld
-    furmark
-    gnome-firmware
-    appimage-run
-    # docker
-    docker-compose
-    # freerdp
+
+    # Hardware
+    nvme-cli
+    resources
+    hardinfo2 # System information and benchmarks for Linux systems
+
+    # Fun
+    r2modman #modding for RiskOfRain2
     blender
-    rustdesk-flutter
     prusa-slicer
   ];
 
@@ -205,22 +213,22 @@
     roboto
   ];
 
-  
+
   services.fwupd.enable = true;
 
   # OpenSSH daemon
   services.openssh.enable = true;
-  
+
   # Arduino Programming
   services.udev.extraRules = ''
     # Arduino Uno R4
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="2341", MODE:="0666"
   '';
-  
+
   # automatic nix-develop when entering a relevant directory.
   # Great for development, *without* needing to add everything to this repo.
   programs.direnv.enable = true;
-  
+
   # Docker
   virtualisation.docker = {
     enable = true;

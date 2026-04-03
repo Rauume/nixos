@@ -13,8 +13,7 @@
     ../modules/syncthing.nix
     ../modules/amdgpu.nix
     # ../modules/ollama.nix
-    # ../modules/winboat.nix
-    ../modules/openrgb.nix
+    # ../modules/openrgb.nix
   ];
 
   # Set hostname

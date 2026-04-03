@@ -8,7 +8,8 @@
 
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
-
+  boot.extraModulePackages = [ config.boot.kernelPackages.nvidiaPackages.legacy_580 ];
+  
   hardware.nvidia = {
 
     # Modesetting is required.
@@ -37,8 +38,8 @@
     # accessible via `nvidia-settings`.
     nvidiaSettings = true;
 
-    # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
+    # Nvidia GTX 1050 exists only in legacy drivers
+    package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
 
     prime = {
       # Make sure to use the correct Bus ID values for your system!
