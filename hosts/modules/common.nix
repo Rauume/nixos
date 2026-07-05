@@ -72,7 +72,7 @@
   # X11 settings
   services.xserver = {
     enable = true;
-    xkb.layout = "pl";
+    xkb.layout = "au";
     xkb.variant = "";
     excludePackages = with pkgs; [xterm];
   };

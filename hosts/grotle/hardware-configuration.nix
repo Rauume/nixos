@@ -13,6 +13,12 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
+  # Load amdgpu early for correct resolution during initrd (Ryzen iGPU)
+  hardware.amdgpu.initrd.enable = true;
+
+  # AMD P-State driver for better CPU power management on Ryzen 9000 series
+  boot.kernelParams = [ "amd_pstate=active" ];
+
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/66cb04ae-6d85-45b4-aa35-fc3d99e5c46c";
       fsType = "ext4";
@@ -38,8 +44,15 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.enp13s0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp14s0.useDHCP = lib.mkDefault true;
+
+  # Bluetooth (onboard B850M controller)
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
+  # Firmware for onboard WiFi/BT chipset
+  hardware.enableRedistributableFirmware = true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

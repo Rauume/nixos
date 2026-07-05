@@ -5,6 +5,8 @@ services = {
   displayManager.sddm.enable = true;
 
   displayManager.sddm.wayland.enable = true;
+
+  power-profiles-daemon.enable = true;
 };
 
 environment.systemPackages = with pkgs;

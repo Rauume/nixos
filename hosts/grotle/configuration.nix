@@ -27,6 +27,11 @@
 
   systemd.tpm2.enable = false;
   boot.initrd.systemd.tpm2.enable = false;
-
+  networking.firewall = {
+    enable = true;
+    allowedTCPPortRanges = [
+      { from = 25565; to = 25599; }
+    ];
+  };
 
 }
