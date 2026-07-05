@@ -16,7 +16,7 @@
         "--expose-wayland"
       ];
     };
-    
+
     gamemode.enable = true;
   };
 }

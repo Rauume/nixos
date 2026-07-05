@@ -1,10 +1,9 @@
 {
-  inputs,
   hostname,
   ...
 }: {
   imports = [
-    
+
     ./hardware-configuration.nix
     ../modules/common.nix
     ../modules/kde.nix
@@ -12,8 +11,6 @@
     ../modules/steam.nix
     ../modules/syncthing.nix
     ../modules/amdgpu.nix
-    # ../modules/ollama.nix
-    # ../modules/openrgb.nix
   ];
 
   # Set hostname

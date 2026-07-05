@@ -1,6 +1,5 @@
 {
   inputs,
-  outputs,
   lib,
   config,
   userConfig,
@@ -30,6 +29,12 @@
   nix.settings = {
     experimental-features = "nix-command flakes";
     auto-optimise-store = true;
+  };
+
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 14d";
   };
 
   # Boot settings
@@ -76,8 +81,6 @@
     xkb.variant = "";
     excludePackages = with pkgs; [xterm];
   };
-
-  # services.displayManager.gdm.enable = true;
 
   # PATH configuration
   environment.localBinInPath = true;
@@ -142,15 +145,11 @@
     dust #Disk usage utility
     wget
     btop
-    # killall
-    # lazydocker
-    # mesa
-    # nh #Yet another nix cli helper
+    killall
+    nh #Yet another nix cli helper
     pipenv
-    pulseaudio
     unzip
     zstd
-    direnv
     firefox
     google-chrome
     discord
@@ -188,6 +187,7 @@
     thonny #rp2040 micropython development
     arduino-ide
     picotool
+    nixd # Nixos lang server
 
     # Hardware
     nvme-cli
