@@ -9,8 +9,7 @@
     ../modules/common.nix
     ../modules/gnome.nix
     ../modules/piper.nix
-    ../modules/syncthing.nix    
-#    ../modules/laptop.nix
+    ../modules/syncthing.nix
   ];
 
   # Set hostname

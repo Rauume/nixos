@@ -66,7 +66,6 @@ This guide assumes you've already [installed the graphical iso](https://nixos.or
        ./hardware-configuration.nix
        ../modules/common.nix
        ../modules/kde.nix
-       ../modules/laptop.nix # remove if this is a desktop
        ../modules/piper.nix
      ];
 

@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    
+
     ./hardware-configuration.nix
     ../modules/common.nix
     ../modules/gnome.nix
@@ -12,7 +12,6 @@
     ../modules/steam.nix
     ../modules/syncthing.nix
     ../modules/amdgpu.nix
-#    ../modules/laptop.nix
   ];
 
   # Set hostname
