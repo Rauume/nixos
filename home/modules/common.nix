@@ -12,6 +12,7 @@
     ../modules/zsh.nix
     ../modules/ohmyzsh.nix
     ../modules/ghostty.nix
+    ../modules/zed.nix
   ];
 
   # Nixpkgs configuration
