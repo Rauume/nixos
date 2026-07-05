@@ -5,7 +5,8 @@
   userConfig,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ../modules/flatpak.nix
   ];
@@ -14,16 +15,16 @@
   nixpkgs.config.allowUnfree = true;
 
   # Register flake inputs for nix commands
-  nix.registry = lib.mapAttrs (_: flake: {inherit flake;}) (lib.filterAttrs (_: lib.isType "flake") inputs);
+  nix.registry = lib.mapAttrs (_: flake: { inherit flake; }) (
+    lib.filterAttrs (_: lib.isType "flake") inputs
+  );
 
   # Add inputs to legacy channels
-  nix.nixPath = ["/etc/nix/path"];
-  environment.etc =
-    lib.mapAttrs' (name: value: {
-      name = "nix/path/${name}";
-      value.source = value.flake;
-    })
-    config.nix.registry;
+  nix.nixPath = [ "/etc/nix/path" ];
+  environment.etc = lib.mapAttrs' (name: value: {
+    name = "nix/path/${name}";
+    value.source = value.flake;
+  }) config.nix.registry;
 
   # Nix settings
   nix.settings = {
@@ -42,7 +43,11 @@
     kernelPackages = pkgs.linuxPackages_zen;
     consoleLogLevel = 0;
     initrd.verbose = true;
-    kernelParams = ["quiet" "splash" "mitigations=off"];
+    kernelParams = [
+      "quiet"
+      "splash"
+      "mitigations=off"
+    ];
     loader.efi.canTouchEfiVariables = true;
     loader.systemd-boot.enable = true;
     loader.systemd-boot.configurationLimit = 5;
@@ -79,7 +84,7 @@
     enable = true;
     xkb.layout = "au";
     xkb.variant = "";
-    excludePackages = with pkgs; [xterm];
+    excludePackages = with pkgs; [ xterm ];
   };
 
   # PATH configuration
@@ -113,7 +118,16 @@
   # User configuration
   users.users.${userConfig.name} = {
     description = userConfig.fullName;
-    extraGroups = ["dialout" "networkmanager" "wheel" "docker" "gamemode" "kvm" "render" "video"];
+    extraGroups = [
+      "dialout"
+      "networkmanager"
+      "wheel"
+      "docker"
+      "gamemode"
+      "kvm"
+      "render"
+      "video"
+    ];
     isNormalUser = true;
     shell = pkgs.zsh;
   };
@@ -138,15 +152,20 @@
 
   # System packages
   environment.systemPackages = with pkgs; [
-    (python3.withPackages (ps: with ps; [pip virtualenv]))
-    eza #Alternate ls
-    fd #Find
-    xh #HTTP client
-    dust #Disk usage utility
+    (python3.withPackages (
+      ps: with ps; [
+        pip
+        virtualenv
+      ]
+    ))
+    eza # Alternate ls
+    fd # Find
+    xh # HTTP client
+    dust # Disk usage utility
     wget
     btop
     killall
-    nh #Yet another nix cli helper
+    nh # Yet another nix cli helper
     pipenv
     unzip
     zstd
@@ -184,10 +203,11 @@
     # Development
     vscode-fhs
     docker-compose
-    thonny #rp2040 micropython development
+    thonny # rp2040 micropython development
     arduino-ide
     picotool
     nixd # Nixos lang server
+    nixfmt-tree
 
     # Hardware
     nvme-cli
@@ -195,7 +215,7 @@
     hardinfo2 # System information and benchmarks for Linux systems
 
     # Fun
-    r2modman #modding for RiskOfRain2
+    r2modman # modding for RiskOfRain2
     blender
     prusa-slicer
   ];
@@ -212,7 +232,6 @@
     # emojione
     roboto
   ];
-
 
   services.fwupd.enable = true;
 

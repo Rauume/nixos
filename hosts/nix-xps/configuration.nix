@@ -3,7 +3,8 @@
   hostname,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
 
     ./hardware-configuration.nix
@@ -36,7 +37,7 @@
         ./nvidia.nix
       ];
       environment.systemPackages = with pkgs; [
-        sl #Used as a profile sanity check
+        sl # Used as a profile sanity check
       ];
     };
   };

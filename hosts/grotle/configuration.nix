@@ -1,7 +1,8 @@
 {
   hostname,
   ...
-}: {
+}:
+{
   imports = [
 
     ./hardware-configuration.nix
@@ -27,7 +28,10 @@
   networking.firewall = {
     enable = true;
     allowedTCPPortRanges = [
-      { from = 25565; to = 25599; }
+      {
+        from = 25565;
+        to = 25599;
+      }
     ];
   };
 

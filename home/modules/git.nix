@@ -1,4 +1,4 @@
-{userConfig, pkgs, ...}: {
+{ userConfig, pkgs, ... }: {
   # Install git via home-manager module
   programs.delta.enableGitIntegration = true;
   programs.git = {

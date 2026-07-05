@@ -1,16 +1,15 @@
-{pkgs, ...}: {
-services = {
-  desktopManager.plasma6.enable = true;
+{ pkgs, ... }: {
+  services = {
+    desktopManager.plasma6.enable = true;
 
-  displayManager.sddm.enable = true;
+    displayManager.sddm.enable = true;
 
-  displayManager.sddm.wayland.enable = true;
+    displayManager.sddm.wayland.enable = true;
 
-  power-profiles-daemon.enable = true;
-};
+    power-profiles-daemon.enable = true;
+  };
 
-environment.systemPackages = with pkgs;
-  [
+  environment.systemPackages = with pkgs; [
     # KDE
     kdePackages.discover # Optional: Install if you use Flatpak or fwupd firmware update sevice
     kdePackages.kcalc # Calculator
@@ -26,14 +25,13 @@ environment.systemPackages = with pkgs;
     # Non-KDE graphical packages
     kdePackages.yakuake
 
-
   ];
 
   hardware = {
     bluetooth = {
-        enable = true;
-        # // To display battery percentage of bluetooth devices
-        settings.General.Experimental = true;
+      enable = true;
+      # // To display battery percentage of bluetooth devices
+      settings.General.Experimental = true;
     };
   };
 

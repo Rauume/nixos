@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   imports = [
     ../modules/bat.nix
     ../modules/fastfetch.nix

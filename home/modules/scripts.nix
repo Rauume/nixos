@@ -5,9 +5,11 @@
   pkgs,
   lib,
   ...
-}: let
+}:
+let
   scripts = ./../../files/scripts;
-in {
+in
+{
   # Source scripts from the home-manager store
   home.file = {
     ".local/bin" = {

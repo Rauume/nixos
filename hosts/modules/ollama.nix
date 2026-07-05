@@ -1,12 +1,12 @@
-{pkgs, ...}: {
-  
+{ pkgs, ... }: {
+
   nixpkgs.config.rocmSupport = true;
   services = {
     open-webui = {
       enable = true;
-      port = 8081;     
+      port = 8081;
     };
-    
+
     ollama = {
       enable = true;
       acceleration = "rocm";

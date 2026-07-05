@@ -1,4 +1,4 @@
-{config, pkgs, ...}: {
+{ config, pkgs, ... }: {
   # Zsh shell configuration
   programs.zsh = {
     enable = true;
@@ -34,8 +34,8 @@
     oh-my-zsh = {
       enable = true;
       plugins = [
-      "git"
-      "sudo" 
+        "git"
+        "sudo"
       ];
     };
     shellAliases = {
@@ -76,10 +76,10 @@
       bindkey '^[[F' beginning-of-line
       bindkey '^[[3;5~' delete-word
       bindkey '^H' backward-delete-word
-      
+
       bindkey '^[[1;5C' forward-word
       bindkey '^[[1;5D' backward-word
-      
+
 
       # open commands in $EDITOR with C-e
       autoload -z edit-command-line

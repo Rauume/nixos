@@ -1,6 +1,8 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   fastfetch_config = ./../../files/configs/fastfetch;
-in {
+in
+{
   # Install fastfetch via home-manager package
   home.packages = with pkgs; [
     fastfetch

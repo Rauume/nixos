@@ -1,6 +1,8 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   neovim_config = ../../files/configs/nvim;
-in {
+in
+{
   # Neovim text editor configuration
   programs.neovim = {
     enable = true;

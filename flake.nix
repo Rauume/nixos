@@ -14,60 +14,61 @@
     hardware.url = "github:nixos/nixos-hardware";
   };
 
-  outputs = {
-    self,
-    home-manager,
-    nixpkgs,
-    ...
-  } @ inputs: let
-    inherit (self) outputs;
+  outputs =
+    {
+      self,
+      home-manager,
+      nixpkgs,
+      ...
+    }@inputs:
+    let
+      inherit (self) outputs;
 
-    # Define user configurations
-    users = {
-      cam = {
-        name = "cam";
-        fullName = "Cam Schriever";
-        email = "";
-        avatar = ./files/avatar/icon.png; #512x512
-      };
-    };
-
-    # Function for NixOS system configuration
-    mkNixosConfiguration = hostname: username:
-      nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs outputs hostname;
-          userConfig = users.${username};
+      # Define user configurations
+      users = {
+        cam = {
+          name = "cam";
+          fullName = "Cam Schriever";
+          email = "";
+          avatar = ./files/avatar/icon.png; # 512x512
         };
-        modules = [./hosts/${hostname}/configuration.nix];
       };
 
-    # Function for Home Manager configuration
-    mkHomeConfiguration = system: username: hostname:
-      home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {inherit system;};
-        extraSpecialArgs = {
-          inherit inputs outputs;
-          userConfig = users.${username};
+      # Function for NixOS system configuration
+      mkNixosConfiguration =
+        hostname: username:
+        nixpkgs.lib.nixosSystem {
+          specialArgs = {
+            inherit inputs outputs hostname;
+            userConfig = users.${username};
+          };
+          modules = [ ./hosts/${hostname}/configuration.nix ];
         };
-        modules = [
-          ./home/${username}/${hostname}.nix
-        ];
+
+      # Function for Home Manager configuration
+      mkHomeConfiguration =
+        system: username: hostname:
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs { inherit system; };
+          extraSpecialArgs = {
+            inherit inputs outputs;
+            userConfig = users.${username};
+          };
+          modules = [
+            ./home/${username}/${hostname}.nix
+          ];
+        };
+    in
+    {
+      #System Config
+      nixosConfigurations = {
+        nix-xps = mkNixosConfiguration "nix-xps" "cam";
+        grotle = mkNixosConfiguration "grotle" "cam";
       };
-  in {
-    #System Config
-    nixosConfigurations = {
-      nix-xps = mkNixosConfiguration "nix-xps" "cam";
-      nix-latitude = mkNixosConfiguration "nix-latitude" "cam";
-      turtwig = mkNixosConfiguration "turtwig" "cam";
-      grotle = mkNixosConfiguration "grotle" "cam";
+      #Home Manager Config
+      homeConfigurations = {
+        "cam@nix-xps" = mkHomeConfiguration "x86_64-linux" "cam" "nix-xps";
+        "cam@grotle" = mkHomeConfiguration "x86_64-linux" "cam" "grotle";
+      };
     };
-    #Home Manager Config
-    homeConfigurations = {
-      "cam@nix-xps" = mkHomeConfiguration "x86_64-linux" "cam" "nix-xps";
-      "cam@nix-latitude" = mkHomeConfiguration "x86_64-linux" "cam" "nix-latitude";
-      "cam@turtwig" = mkHomeConfiguration "x86_64-linux" "cam" "turtwig";
-      "cam@grotle" = mkHomeConfiguration "x86_64-linux" "cam" "grotle";
-    };
-  };
 }

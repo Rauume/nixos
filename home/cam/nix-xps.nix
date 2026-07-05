@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   imports = [
     ../modules/common.nix
     ../modules/easyeffects.nix

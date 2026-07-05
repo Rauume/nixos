@@ -1,4 +1,4 @@
-{pkgs, userConfig,...}: {
+{ pkgs, userConfig, ... }: {
   services.lact.enable = true;
   hardware.amdgpu.overdrive.enable = true;
   users.users.${userConfig.name}.extraGroups = [ "lact" ];
