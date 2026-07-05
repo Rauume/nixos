@@ -11,7 +11,10 @@
     };
 
     # NixOS profiles to optimize settings for different hardware
-    hardware.url = "github:nixos/nixos-hardware";
+    hardware = {
+      url = "github:nixos/nixos-hardware";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
